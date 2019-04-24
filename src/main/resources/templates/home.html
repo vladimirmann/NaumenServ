@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:ch="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />-->
+    <link th:href="@{/public/styles.css}" rel="stylesheet"/>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
+
+    <title>Система скан образов документов</title>
+</head>
+
+<body>
+<!--<div class="container-fluid header" style="background: #222; padding: 0 2%">-->
+<!--<div class="row" style="padding: 0 25px">-->
+<!--<div class="col-md-6 header-col">-->
+<!--&lt;!&ndash;<span>Поиск самых выгодных предложений на одежду в интернете</span>&ndash;&gt;-->
+<!--<span>Лучшие цены на одежду и обувь на одном сайте</span>-->
+<!--</div>-->
+<!--<div class="col-md-2 header-col" style="background: #ef5777">-->
+<!--<i class="fas fa-ruble-sign" style="font-size: 17px; padding-right: 7px"></i>-->
+<!--<span>Начни экономить !</span>-->
+<!--</div>-->
+<!--<div class="col-md-4 header-col">-->
+<!--<span>Только крупные и проверенные магазины</span>-->
+<!--</div>-->
+<!--&lt;!&ndash;<div class="col-md-2 header-col">6</div>&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="container-fluid" style="padding-top: 20px; width: 95%; border-bottom: 1px solid #222; padding-bottom: 15px">-->
+<!--<div class="row">-->
+<!--<div class="col-md-3">-->
+<!--</div>-->
+<!--<div class="col-md-6">-->
+<!--<center>-->
+<!--<img class="logo-img" src="https://www.clouty.ru/client/assets/images/clouty-logo.svg" height="35px" alt="logo">-->
+<!--</center>-->
+<!--</div>-->
+<!--<div class="col-md-3">-->
+<!--<div class="search">-->
+<!--<form action="#" method="post">-->
+<!--<input class="search_input" type="text" name="search" placeholder="Поиск товара">-->
+<!--<button class="search_button" type="submit">-->
+<!--<img class="search_icon" src="search_icon.png" width="20px" height="20px" alt="">-->
+<!--</button>-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="container-fluid" style="width: 95%; padding-top: 5vh">
+    <h3 th:inline="text">Вы [[${#httpServletRequest.remoteUser}]]!</h3>
+
+</div>
+<div th:switch="${#httpServletRequest.remoteUser}">
+<a href="/login" style="color: #888"  th:case="null">
+    <div class="container-fluid d-flex justify-content-end" style="width: 95%; padding-top: 5vh">
+        <span style="font-size: 4vh">Авторизация&nbsp;&nbsp;</span>
+        <i class="fas fa-user" style="font-size: 5vh; color: #888 !important;"></i>
+    </div>
+</a>
+</div>
+<div th:switch="${#httpServletRequest.remoteUser}">
+<a href="/hello" style="color: #888" th:case="'admin'">
+    <div class="container-fluid d-flex justify-content-end" style="width: 95%; padding-top: 5vh">
+        <span style="font-size: 4vh">Выйти&nbsp;&nbsp;</span>
+        <i class="fas fa-user" style="font-size: 5vh; color: #888 !important;"></i>
+    </div>
+</a>
+</div>
+
+<div th:switch="${#httpServletRequest.remoteUser}">
+    <a href="/hello" style="color: #888" th:case="'moder'">
+        <div class="container-fluid d-flex justify-content-end" style="width: 95%; padding-top: 5vh">
+            <span style="font-size: 4vh">Выйти&nbsp;&nbsp;</span>
+            <i class="fas fa-user" style="font-size: 5vh; color: #888 !important;"></i>
+        </div>
+    </a>
+</div>
+
+<div th:switch="${#httpServletRequest.remoteUser}">
+    <a href="/hello" style="color: #888" th:case="'user'">
+        <div class="container-fluid d-flex justify-content-end" style="width: 95%; padding-top: 5vh">
+            <span style="font-size: 4vh">Выйти&nbsp;&nbsp;</span>
+            <i class="fas fa-user" style="font-size: 5vh; color: #888 !important;"></i>
+        </div>
+    </a>
+</div>
+
+<div th:switch="${#httpServletRequest.remoteUser}">
+    <!--<h3 th:inline="text">Вы [[${#httpServletRequest.remoteUser}]]!</h3>-->
+    <a href="/upload" style="color: #888" th:case="'admin'">
+        <div class="container-fluid d-flex justify-content-end" style="width: 95%; padding-top: 5vh">
+            <span style="font-size: 4vh">Загрузить&nbsp;&nbsp;</span>
+            <i class="fas fa-cloud-download-alt" style="font-size: 5vh; color: #888 !important;"></i>
+        </div>
+    </a>
+</div>
+
+<div class="container-fluid" style="width: 95%">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-3" style="padding: 0 10px" th:each="file : ${files}">
+                    <div class="product-grid">
+                        <div class="product-image doc-container">
+                            <!--<img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg">-->
+                            <a th:href="${'/files/' + file.getName()}">
+                            <img class="pic-1 document" th:src="${'/public/files/' + file.getName()}" download/>
+                            </a>
+                            <!--<a href="https://google.com">-->
+                                <span class="product-new-label not-verified">Не проверено</span>
+                            <!--</a>-->
+                            <span class="product-discount-label">14.01.19</span>
+                        </div>
+
+                        <div class="product-content">
+                            <!--<h3 class="title">Проверил Пупкин К.А.</h3>-->
+                            <div class="price">Документ</div>
+                            <!--<div class="product-sizes">Описание</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:switch="${#httpServletRequest.remoteUser}">
+<script type="text/javascript"  th:case="'moder'">
+    document.querySelectorAll(".product-new-label")
+        .forEach((el)=> el.addEventListener("click", function () {
+            if (this.classList.contains('var-click')) {
+                this.classList.remove('var-click');
+                this.textContent = 'не проверено';
+            } else {
+                this.classList.add('var-click');
+                this.textContent = 'проверено';
+            }
+
+        }));
+</script>
+</div>
+<!--<div class="container-fluid footer" style="background: #222; margin: 50px 0 0 0; padding: 35px 5% 20px">-->
+<!--<div class="row">-->
+<!--<div class="col-6 col-sm-4 col-md-3">-->
+<!--<div class="footer-grid">-->
+<!--<h5>Сервис и поддержка</h5>-->
+<!--<ul class="footer-grid-ul">-->
+<!--<li class="footer-grid-li">-->
+<!--<div class="adiv">-->
+<!--<a class="footer-grid-a" href="#">Как сделать заказ</a>-->
+<!--</div>-->
+<!--</li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Возврат товара</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Доставка</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Способы оплаты</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-6 col-sm-4 col-md-3">-->
+<!--<div class="footer-grid">-->
+<!--<h5>О нас</h5>-->
+<!--<ul class="footer-grid-ul">-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">О проекте</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Парнеры</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Преимущества</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-6 col-sm-4 col-md-3">-->
+<!--<div class="footer-grid">-->
+<!--<h5>Мы в соц. сетях</h5>-->
+<!--<ul class="footer-grid-ul">-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Как сделать заказ</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Возврат товара</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Доставка</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Способы оплаты</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-6 col-sm-4 col-md-3">-->
+<!--<div class="footer-grid">-->
+<!--<h5>Тут еще что нибудь</h5>-->
+<!--<ul class="footer-grid-ul">-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Как сделать заказ</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Возврат товара</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Доставка</a></li>-->
+<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Способы оплаты</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="footer-grid" style="margin-top: 15px">-->
+<!--<h7>©Clouty 2019. Все права защищены</h7>-->
+<!--</div>-->
+
+<!--</div>-->
+
+
+</body>
