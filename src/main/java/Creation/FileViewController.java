@@ -18,10 +18,12 @@ public class FileViewController {
 
     public
     String provideUploadInfo(Model model) {
-
-        File folder = new File("src\\main\\resources\\static\\public\\files\\");
-        model.addAttribute("files", folder.listFiles());
-        return "home";}
-
+        if (request.isUserInRole("admin") || request.isUserInRole("moder") || request.isUserInRole("user")) {
+            File folder = new File("src\\main\\resources\\static\\public\\files\\");
+            model.addAttribute("files", folder.listFiles());
+            return "home";
+        }
+        return "home";
+    }
 
 }

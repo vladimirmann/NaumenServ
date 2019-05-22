@@ -20,7 +20,7 @@ public class Application  extends SpringBootServletInitializer {
         factory.setMaxRequestSize("128000KB");
         return factory.createMultipartConfig();
     }
-    static { System.setProperty("logback.configurationFile", "C:/Users/PC-User/Desktop/ServerPDF/src/main/resources/"+"config.xml");}
+  //  static { System.setProperty("logback.configurationFile", "C:/Users/PC-User/Desktop/ServerPDF/src/main/resources/"+"config.xml");}
     private final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {

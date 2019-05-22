@@ -39,43 +39,8 @@
 </head>
 
 <body>
-<!--<div class="container-fluid header" style="background: #222; padding: 0 2%">-->
-<!--<div class="row" style="padding: 0 25px">-->
-<!--<div class="col-md-6 header-col">-->
-<!--&lt;!&ndash;<span>Поиск самых выгодных предложений на одежду в интернете</span>&ndash;&gt;-->
-<!--<span>Лучшие цены на одежду и обувь на одном сайте</span>-->
-<!--</div>-->
-<!--<div class="col-md-2 header-col" style="background: #ef5777">-->
-<!--<i class="fas fa-ruble-sign" style="font-size: 17px; padding-right: 7px"></i>-->
-<!--<span>Начни экономить !</span>-->
-<!--</div>-->
-<!--<div class="col-md-4 header-col">-->
-<!--<span>Только крупные и проверенные магазины</span>-->
-<!--</div>-->
-<!--&lt;!&ndash;<div class="col-md-2 header-col">6</div>&ndash;&gt;-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="container-fluid" style="padding-top: 20px; width: 95%; border-bottom: 1px solid #222; padding-bottom: 15px">-->
-<!--<div class="row">-->
-<!--<div class="col-md-3">-->
-<!--</div>-->
-<!--<div class="col-md-6">-->
-<!--<center>-->
-<!--<img class="logo-img" src="https://www.clouty.ru/client/assets/images/clouty-logo.svg" height="35px" alt="logo">-->
-<!--</center>-->
-<!--</div>-->
-<!--<div class="col-md-3">-->
-<!--<div class="search">-->
-<!--<form action="#" method="post">-->
-<!--<input class="search_input" type="text" name="search" placeholder="Поиск товара">-->
-<!--<button class="search_button" type="submit">-->
-<!--<img class="search_icon" src="search_icon.png" width="20px" height="20px" alt="">-->
-<!--</button>-->
-<!--</form>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
+
+
 <div class="container-fluid" style="width: 95%; padding-top: 5vh">
     <h3 th:inline="text">Вы [[${#httpServletRequest.remoteUser}]]!</h3>
 
@@ -156,7 +121,7 @@
 <div th:switch="${#httpServletRequest.remoteUser}">
 <script type="text/javascript"  th:case="'moder'">
     document.querySelectorAll(".product-new-label")
-        .forEach((el)=> el.addEventListener("click", function () {
+        .forEach(el = el.addEventListener("click", function () {
             if (this.classList.contains('var-click')) {
                 this.classList.remove('var-click');
                 this.textContent = 'не проверено';
@@ -168,65 +133,7 @@
         }));
 </script>
 </div>
-<!--<div class="container-fluid footer" style="background: #222; margin: 50px 0 0 0; padding: 35px 5% 20px">-->
-<!--<div class="row">-->
-<!--<div class="col-6 col-sm-4 col-md-3">-->
-<!--<div class="footer-grid">-->
-<!--<h5>Сервис и поддержка</h5>-->
-<!--<ul class="footer-grid-ul">-->
-<!--<li class="footer-grid-li">-->
-<!--<div class="adiv">-->
-<!--<a class="footer-grid-a" href="#">Как сделать заказ</a>-->
-<!--</div>-->
-<!--</li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Возврат товара</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Доставка</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Способы оплаты</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
 
-<!--<div class="col-6 col-sm-4 col-md-3">-->
-<!--<div class="footer-grid">-->
-<!--<h5>О нас</h5>-->
-<!--<ul class="footer-grid-ul">-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">О проекте</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Парнеры</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Преимущества</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--<div class="col-6 col-sm-4 col-md-3">-->
-<!--<div class="footer-grid">-->
-<!--<h5>Мы в соц. сетях</h5>-->
-<!--<ul class="footer-grid-ul">-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Как сделать заказ</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Возврат товара</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Доставка</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Способы оплаты</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--<div class="col-6 col-sm-4 col-md-3">-->
-<!--<div class="footer-grid">-->
-<!--<h5>Тут еще что нибудь</h5>-->
-<!--<ul class="footer-grid-ul">-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Как сделать заказ</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Возврат товара</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Доставка</a></li>-->
-<!--<li class="footer-grid-li"><a class="footer-grid-a" href="#">Способы оплаты</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--<div class="footer-grid" style="margin-top: 15px">-->
-<!--<h7>©Clouty 2019. Все права защищены</h7>-->
-<!--</div>-->
-
-<!--</div>-->
 
 
 </body>
